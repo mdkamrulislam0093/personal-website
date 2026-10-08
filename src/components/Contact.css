@@ -1,0 +1,47 @@
+.contact { text-align: center; overflow: hidden; isolation: isolate; }
+.contact__label { justify-content: center; }
+.contact__title { font-size: clamp(56px, 13vw, 220px); }
+.contact__title em { display: inline-block; }
+.contact__sub { color: var(--muted); max-width: 520px; margin: var(--s5) auto var(--s7); }
+
+.magnet {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: clamp(160px, 18vw, 220px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 18px;
+  transition: transform 0.4s var(--ease-out);
+}
+.magnet span { display: block; pointer-events: none; transition: transform 0.4s var(--ease-out); }
+.magnet::before {
+  content: '';
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  border: 1px dashed rgba(212, 255, 58, 0.5);
+  animation: spin 18s linear infinite;
+}
+
+.contact__links { display: flex; justify-content: center; gap: var(--s5); flex-wrap: wrap; margin-top: var(--s7); }
+.contact__links a { position: relative; display: inline-block; overflow: hidden; height: 1.6em; line-height: 1.6; }
+.contact__links a span { display: block; transition: transform 0.5s var(--ease-out); }
+.contact__links a span:last-child { color: var(--accent); }
+.contact__links a:hover span { transform: translateY(-100%); }
+
+.contact__orb {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  bottom: -30vmax;
+  width: 50vmax; height: 50vmax;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(212, 255, 58, 0.18), transparent 60%);
+  filter: blur(30px);
+  pointer-events: none;
+}
